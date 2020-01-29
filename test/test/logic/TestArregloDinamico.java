@@ -1,4 +1,4 @@
-package test.data_structures;
+package test.logic;
 
 import model.data_structures.ArregloDinamico;
 
