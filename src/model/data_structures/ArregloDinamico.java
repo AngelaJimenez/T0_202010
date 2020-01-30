@@ -66,7 +66,7 @@ public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamic
 		public T buscar(T dato) {
 			// TODO implementar
 			T rta = null; 
-			for (int i = 0;i<elementos.length; i++ )
+			for (int i = 0;i<tamanoAct; i++ )
 			{
 				if(elementos[i].compareTo(dato)==0)
 				{
@@ -80,17 +80,19 @@ public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamic
 		public T eliminar(T dato) {
 			// TODO implementar
 			// Recomendacion: Usar el criterio de comparacion natural (metodo compareTo()) definido en Strings.
-			T rta = null; 
-			for (int i = 0;i<elementos.length; i++ )
+			T rta = null;
+			for (int i = 0;i<elementos.length && rta == null; i++ )
 			{
 				if(elementos[i].compareTo(dato)==0)
 				{
-					for (int j = i;j< elementos.length - 1;j++)
+					rta = elementos[i];
+					for (int j = i;j< tamanoAct - 1;j++)
 					{
-						elementos[i] = elementos[i+1]; 	
+						elementos[j] = elementos[j+1]; 	
 					}
 					elementos[tamanoAct - 1] = null;
 					tamanoAct--;
+					
 				}
 			}
 			return rta;

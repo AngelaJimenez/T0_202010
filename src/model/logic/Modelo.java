@@ -68,5 +68,16 @@ public class Modelo {
 		return datos.eliminar(dato);
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		String msg = "[";
+		for(int i=0; i<datos.darTamano(); i++) {
+			msg+= datos.darElemento(i) + ", ";
+		}
+		msg = msg.substring(0, msg.length() - 2);
+		msg+="]";
+		return msg;
+	}
 
 }
